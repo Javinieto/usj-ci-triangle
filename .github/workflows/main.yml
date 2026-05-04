@@ -3,6 +3,9 @@ name: CI
 on:
   push:
     branches: ["main"]
+  pull_request:
+    types: [opened, reopened]
+    branches: ["main"]
     
 permissions:
   contents: read
@@ -65,4 +68,4 @@ jobs:
         uses: actions/configure-pages@v2
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4   
